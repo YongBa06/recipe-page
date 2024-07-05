@@ -35,7 +35,6 @@ li {
 }
 
 .container {
-  /* max-width: 375px; */
   overflow: hidden;
   margin: 0 auto;
 }
@@ -103,6 +102,13 @@ li {
   text-align: start;
   padding: 0px 20px;
 }
+.card .card-text .card-item {
+  padding-left: 16px;
+}
+.card .card-text .card-item::marker {
+  color: var(--secondary-color);
+}
+
 .card .card-text span {
   color: var(--brown);
   font-weight: bold;
@@ -123,7 +129,12 @@ li {
   line-height: 26px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+.ingredients .ingredients-text .ingredient-item {
+  padding-left: 20px;
+}
+.ingredients .ingredients-text .ingredient-item::marker {
+  color: var(--primary-color);
+}
 .instructions {
   padding: 30px 30px 0px;
 }
@@ -131,6 +142,21 @@ li {
   margin-top: 20px;
   padding: 0px 30px 32px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.instructions .instruction-content .instruction-item {
+  padding-left: 20px;
+}
+.instructions .instruction-content .instruction-item:not(:first-child) {
+  margin-top: 16px;
+}
+.instructions .instruction-content .instruction-item::marker {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.instructions .instruction-content .instruction-item span {
+  font-weight: 800;
+  color: var(--brown);
 }
 .nutrition {
   padding: 30px 30px;
@@ -142,13 +168,21 @@ li {
 .nutrition-table {
   margin-top: 20px;
   width: 100%;
-  text-align: start;
 }
 
 table {
   border-collapse: collapse;
 }
+table tr td.energy {
+  left: 10px;
+  color: var(--brown);
+  font-weight: 500;
+}
 
+table tr td.kcal {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 tr {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -158,7 +192,7 @@ tr:last-child {
 }
 
 td {
-  padding: 10px;
+  padding: 10px 26px;
 }
 
 .attribution {
@@ -168,4 +202,50 @@ td {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: var(--egg-shell);
+    padding: 80px 0;
+  }
+  .container {
+    max-width: 700px;
+    padding: 30px 30px;
+    background-color: var(--primary-white);
+    border-radius: 18px;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .hero-content {
+    padding: 30px 10px 0px;
+  }
+
+  .preparation .card {
+    position: relative;
+    width: 620px;
+    height: auto;
+    background-color: var(--secondary-white);
+    padding: 20px 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(153, 62, 104, 0.1);
+    border-left: 0px;
+  }
+
+  .card:after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(228, 222, 216, 0.4);
+    padding: 3px 1px;
+    z-index: 1;
+  }
 }
